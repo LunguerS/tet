@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #0f172a, #1e2937, #334155);
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Страницы */
+.page {
+    display: none;
+    animation: fadeInScale 0.4s ease forwards;
+}
+
+.page.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Главная страница */
+.btn {
+    background: #3b82f6;
+    color: white;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+}
+
+.btn:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+/* Карточка героя */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    padding: 2rem;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(80px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.back-btn {
+    background: #475569;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #334155;
+}
+
+.hero-info {
+    text-align: center;
+}
+
+.hero-img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    margin: 1.5rem 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.owner {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.work {
+    color: #e2e8f0;
+    font-weight: 600;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.description {
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.summary-btn {
+    background: #3b82f6;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.summary-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Футер */
+.footer {
+    text-align: center;
+    margin-top: auto;
+    padding-top: 3rem;
+    color: #64748b;
+    font-size: 0.95rem;
+}

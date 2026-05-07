@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Любимые литературные герои</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Главная страница -->
+<div id="main-page" class="page active">
+    <div class="container">
+        <div class="text-center max-w-3xl mx-auto">
+            <h1 class="text-5xl font-bold mb-6">Любимые литературные герои</h1>
+
+            <p class="text-lg text-slate-300 mb-10 leading-relaxed">
+                Добро пожаловать на сайт Радомира и Тимофея.<br>
+                Выберите, героя какого пользователя вы хотите посмотреть.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <button onclick="showHero(0)" class="btn">Радомир</button>
+                <button onclick="showHero(1)" class="btn">Тимофей</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="hero-page" class="page">
+    <div class="container">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-4">Любимые литературные герои</h1>
+            <p class="text-lg text-slate-300">Добро пожаловать на страницу героя</p>
+        </header>
+
+        <div class="flex justify-center">
+            <div id="hero-content" class="card">
+                <button onclick="goBack()" class="back-btn">
+                    ← Назад
+                </button>
+
+                <div class="hero-info">
+                    <h2 id="hero-name" class="text-4xl font-bold mb-2"></h2>
+                    <p id="hero-owner" class="owner"></p>
+
+                    <img id="hero-image" class="hero-img" alt="Герой">
+
+                    <p id="hero-work" class="work"></p>
+
+                    <p id="hero-description" class="description"></p>
+
+                    <a id="hero-link" href="#" target="_blank" class="summary-btn">
+                        Краткое содержание произведения
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            © 2026 LunguerS aka Радомир
+        </footer>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
