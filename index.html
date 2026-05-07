@@ -33,19 +33,17 @@
 <div id="hero-page" class="page">
     <div class="container">
         <button onclick="goBack()" class="back-btn">
-            <i class="fas fa-arrow-left"></i> Назад
+            ← Назад
         </button>
 
-        <div id="hero-content" class="card">
+        <div class="card">
             <div class="hero-info">
                 <h2 id="hero-name" class="hero-name"></h2>
                 <p id="hero-owner" class="owner"></p>
 
                 <div class="image-container">
                     <img id="hero-image" class="hero-img" alt="Герой" onclick="openModal()">
-                    <div class="image-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                    <div class="image-overlay"><i class="fas fa-search-plus"></i></div>
                 </div>
 
                 <p id="hero-work" class="work"></p>
@@ -55,7 +53,6 @@
                     <button onclick="toggleLike()" id="like-btn" class="like-btn">
                         ❤️ <span id="like-count">0</span>
                     </button>
-
                     <a id="hero-link" href="#" target="_blank" class="summary-btn">
                         Краткое содержание
                     </a>
@@ -63,9 +60,7 @@
             </div>
         </div>
 
-        <footer class="footer">
-            © 2026 LunguerS aka Радомир
-        </footer>
+        <footer class="footer">© 2026 LunguerS aka Радомир</footer>
     </div>
 </div>
 
@@ -73,7 +68,7 @@
 <div id="image-modal" class="modal">
     <div class="modal-content">
         <button class="modal-close" onclick="closeModal()">×</button>
-        <img id="modal-image" class="modal-img" alt="Герой">
+        <img id="modal-image" class="modal-img" alt="">
     </div>
 </div>
 
