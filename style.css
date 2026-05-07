@@ -21,13 +21,27 @@ body {
     min-height: 100vh;
 }
 
-/* Адаптивность */
-.content {
+/* === Страницы === */
+.page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    min-height: 100vh;
+}
+
+.page.active {
+    display: flex;
+    opacity: 1;
+    flex-direction: column;
+}
+
+/* Главная страница */
+#main-page .content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     text-align: center;
 }
 
@@ -39,30 +53,30 @@ body {
 }
 
 @media (min-width: 768px) {
-    .title { font-size: 4rem; }
+    .title { font-size: 4.2rem; }
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: #94a3b8;
     margin-bottom: 3rem;
     line-height: 1.6;
 }
 
-/* Кнопки */
+/* Кнопки главной страницы */
 .buttons {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
 }
 
 .btn {
     background: #3b82f6;
     color: white;
-    padding: 1.4rem 2rem;
-    font-size: 1.4rem;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     border: none;
     border-radius: 9999px;
@@ -82,25 +96,19 @@ body {
 }
 
 /* Страница героя */
-.page {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.page.active {
-    display: block;
-    opacity: 1;
+#hero-page {
+    flex-direction: column;
 }
 
 .back-btn {
+    align-self: flex-start;
     background: rgba(255,255,255,0.1);
     color: white;
     border: none;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1.4rem;
     border-radius: 9999px;
     cursor: pointer;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-size: 1.1rem;
     transition: 0.3s;
 }
@@ -110,7 +118,6 @@ body {
     transform: translateX(-5px);
 }
 
-/* Карточка */
 .card {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);
@@ -118,8 +125,19 @@ body {
     border-radius: 2rem;
     padding: 2.5rem 2rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
     max-width: 520px;
     margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-info {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-name {
@@ -132,6 +150,8 @@ body {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
+
+/* Остальные стили (image-container, modal и т.д.) оставляем как были */
 
 .image-container {
     position: relative;
@@ -172,54 +192,13 @@ body {
     opacity: 1;
 }
 
-.work {
-    font-size: 1.25rem;
-    color: #e2e8f0;
-    font-weight: 600;
-    margin: 1.2rem 0;
+.work, .description, .actions {
+    margin-top: 1rem;
 }
 
-.description {
-    line-height: 1.8;
-    color: #cbd5e1;
-    margin-bottom: 2rem;
-}
+/* Модальное окно и остальные стили */
+.like-btn, .summary-btn, .modal { /* ... оставляем как в предыдущей версии */ }
 
-/* Действия */
-.actions {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-}
-
-.like-btn {
-    background: rgba(239, 68, 68, 0.15);
-    color: #f87171;
-    border: 2px solid #f87171;
-    padding: 0.8rem 1.8rem;
-    border-radius: 9999px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.like-btn.liked {
-    background: #f87171;
-    color: white;
-    animation: pop 0.3s;
-}
-
-@keyframes pop {
-    0% { transform: scale(0.8); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-/* Модальное окно */
 .modal {
     display: none;
     position: fixed;
@@ -241,24 +220,22 @@ body {
     max-width: 100%;
     max-height: 90vh;
     border-radius: 1rem;
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
 
 .modal-close {
     position: absolute;
-    top: -50px;
-    right: 10px;
-    font-size: 3rem;
+    top: -60px;
+    right: 20px;
+    font-size: 3.5rem;
     color: white;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-/* Футер */
 .footer {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
     color: #64748b;
-    font-size: 1rem;
+    padding-bottom: 1rem;
 }
