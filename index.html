@@ -13,46 +13,52 @@
 <!-- Главная страница -->
 <div id="main-page" class="page active">
     <div class="container">
-        <div class="text-center max-w-3xl mx-auto">
-            <h1 class="text-5xl font-bold mb-6">Любимые литературные герои</h1>
+        <div class="content">
+            <h1 class="title">Любимые литературные герои</h1>
 
-            <p class="text-lg text-slate-300 mb-10 leading-relaxed">
+            <p class="subtitle">
                 Добро пожаловать на сайт Радомира и Тимофея.<br>
-                Выберите, героя какого пользователя вы хотите посмотреть.
+                Выберите героя:
             </p>
 
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
+            <div class="buttons">
                 <button onclick="showHero(0)" class="btn">Радомир</button>
                 <button onclick="showHero(1)" class="btn">Тимофей</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Страница героя -->
 <div id="hero-page" class="page">
     <div class="container">
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold mb-4">Любимые литературные герои</h1>
-            <p class="text-lg text-slate-300">Добро пожаловать на страницу героя</p>
-        </header>
+        <button onclick="goBack()" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Назад
+        </button>
 
-        <div class="flex justify-center">
-            <div id="hero-content" class="card">
-                <button onclick="goBack()" class="back-btn">
-                    ← Назад
-                </button>
+        <div id="hero-content" class="card">
+            <div class="hero-info">
+                <h2 id="hero-name" class="hero-name"></h2>
+                <p id="hero-owner" class="owner"></p>
 
-                <div class="hero-info">
-                    <h2 id="hero-name" class="text-4xl font-bold mb-2"></h2>
-                    <p id="hero-owner" class="owner"></p>
+                <div class="image-container">
+                    <img id="hero-image" class="hero-img" alt="Герой" onclick="openModal()">
+                    <div class="image-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
 
-                    <img id="hero-image" class="hero-img" alt="Герой">
+                <p id="hero-work" class="work"></p>
+                <p id="hero-description" class="description"></p>
 
-                    <p id="hero-work" class="work"></p>
-
-                    <p id="hero-description" class="description"></p>
+                <div class="actions">
+                    <button onclick="toggleLike()" id="like-btn" class="like-btn">
+                        <i class="fas fa-heart"></i>
+                        <span id="like-count">0</span>
+                    </button>
 
                     <a id="hero-link" href="#" target="_blank" class="summary-btn">
-                        Краткое содержание произведения
+                        Краткое содержание
                     </a>
                 </div>
             </div>
@@ -61,6 +67,14 @@
         <footer class="footer">
             © 2026 LunguerS aka Радомир
         </footer>
+    </div>
+</div>
+
+<!-- Модальное окно для изображения -->
+<div id="image-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <img id="modal-image" class="modal-img" alt="Герой">
     </div>
 </div>
 
