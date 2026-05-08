@@ -6,24 +6,47 @@
     <title>Любимые литературные герои</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-
-<!-- Главная страница -->
 <div id="main-page" class="page active">
     <div class="container">
         <div class="content">
+
             <h1 class="title">Любимые литературные герои</h1>
+
             <p class="subtitle">
-                Добро пожаловать на сайт Радомира и Тимофея.<br>
+                Добро пожаловать на сайт Радомира, Тимофея и Альмира.<br>
                 Выберите героя:
             </p>
+            <div class="buttons" id="main-buttons">
+                <button onclick="showHero(0)" class="btn hero-btn">
+                    Радомир
+                </button>
 
-            <div class="buttons">
-                <button onclick="showHero(0)" class="btn hero-btn">Радомир</button>
-                <button onclick="showHero(1)" class="btn hero-btn">Тимофей</button>
+                <button onclick="showHero(1)" class="btn hero-btn">
+                    Тимофей
+                </button>
+
+                <button onclick="showAlmirHeroes()" class="btn hero-btn">
+                    Альмир
+                </button>
             </div>
+            <div class="buttons hidden" id="almir-buttons">
+
+                <button onclick="showHero(2)" class="btn hero-btn">
+                    Монки Д. Луффи
+                </button>
+
+                <button onclick="showHero(3)" class="btn hero-btn">
+                    Юрий Гречкин
+                </button>
+
+                <button onclick="backToMain()" class="btn back-small">
+                    ← Назад
+                </button>
+
+            </div>
+
         </div>
     </div>
 </div>
@@ -31,27 +54,33 @@
 <!-- Страница героя -->
 <div id="hero-page" class="page">
     <div class="container">
+
         <button onclick="goBack()" class="back-btn">
             ← Назад
         </button>
 
         <div class="card">
+
             <div class="hero-info">
+
                 <h2 id="hero-name" class="hero-name"></h2>
+
                 <p id="hero-owner" class="owner"></p>
 
                 <img id="hero-image" class="hero-img" alt="Герой">
 
                 <p id="hero-work" class="work"></p>
+
                 <p id="hero-description" class="description"></p>
 
-                <a id="hero-link" href="#" target="_blank" class="summary-btn">
-                    Краткое содержание произведения
-                </a>
             </div>
+
         </div>
 
-        <footer class="footer">© 2026 LunguerS aka Радомир</footer>
+        <footer class="footer">
+            © 2026 LunguerS aka Радомир
+        </footer>
+
     </div>
 </div>
 
